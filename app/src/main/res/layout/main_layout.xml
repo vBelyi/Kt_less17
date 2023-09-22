@@ -8,9 +8,7 @@
         android:layout_height="match_parent"
         android:id="@+id/myFragment"
         android:name="com.example.kt_less17.ListFragment">
-
     </androidx.fragment.app.FragmentContainerView>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listView"
