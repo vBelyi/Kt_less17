@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 
 class ListFragment : Fragment() {
     // Оголосіть статичний метод newInstance з параметром для передачі даних
@@ -40,6 +41,11 @@ class ListFragment : Fragment() {
 
         // Встановлення тексту біографії і відображення зображення за URL
         biography.text = biographyText
+        imageUrl?.let{
+            Glide.with(requireContext())
+                .load(it)
+                .into(xxlImage)
+        }
         // Завантаження і відображення зображення за imageUrl з використанням бібліотеки Glide або іншої
         // бібліотеки для завантаження зображень.
     }
