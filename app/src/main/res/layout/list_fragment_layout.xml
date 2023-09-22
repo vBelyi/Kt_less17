@@ -15,9 +15,23 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fragmentText">
+        android:layout_height="100dp"
+        android:id="@+id/fragmentText"
+        android:gravity="center_vertical">
+    </TextView>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/fragmentText2"
+        android:gravity="center_vertical">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/fragmentText3"
+        android:gravity="center_vertical">
     </TextView>
 
 

@@ -35,7 +35,7 @@ class MainActivity: AppCompatActivity() {
                     // Створюємо адаптер та передаємо дані у фрагмент ListFragment
                     val myAdapter = MyRecyclerViewAdapter(items) { selectedItem ->
                         val detailFragment =
-                            ListFragment.newInstance(selectedItem.biography.firstAppearance, selectedItem.images.lg)
+                            ListFragment.newInstance(selectedItem.biography.fullName, selectedItem.biography.firstAppearance, selectedItem.powerstats.power, selectedItem.images.lg)
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.myFragment, detailFragment)
                             .addToBackStack(null)
@@ -60,12 +60,10 @@ class MainActivity: AppCompatActivity() {
 
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount > 0) {
-            // Видаляємо останній фрагмент зі стеку бекстеку
             supportFragmentManager.popBackStack()
             listView.visibility = View.VISIBLE
 
         } else {
-            // Якщо стек бекстеку пустий, викликаємо стандартний onBackPressed
             super.onBackPressed()
         }
     }
