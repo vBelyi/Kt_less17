@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 
 class ListFragment : Fragment() {
-    // Оголосіть статичний метод newInstance з параметром для передачі даних
     companion object {
         fun newInstance(biographyFullName: String, biographyFirsAppearance: String, powerStats: String, imageUrl: String): ListFragment {
             val fragment = ListFragment()
