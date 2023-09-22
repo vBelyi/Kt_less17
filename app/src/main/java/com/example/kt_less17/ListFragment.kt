@@ -12,13 +12,14 @@ import com.bumptech.glide.Glide
 
 class ListFragment : Fragment() {
     companion object {
-        fun newInstance(biographyFullName: String, biographyFirsAppearance: String, powerStats: String, imageUrl: String): ListFragment {
+        fun newInstance(biographyFullName: String, biographyFirsAppearance: String, powerStats: String, appearance: String, imageUrl: String): ListFragment {
             val fragment = ListFragment()
             val args = Bundle()
             args.putString("biographyFullName", biographyFullName)
             args.putString("imageUrl", imageUrl)
             args.putString("biographyFirsAppearance", biographyFirsAppearance)
             args.putString("powerStats", powerStats)
+            args.putString("appearance", appearance)
             fragment.arguments = args
             return fragment
         }
@@ -38,10 +39,13 @@ class ListFragment : Fragment() {
         val imageUrl = arguments?.getString("imageUrl")
         val biographyFirsAppearance = arguments?.getString("biographyFirsAppearance")
         val powerStats = arguments?.getString("powerStats")
+        val appearance = arguments?.getString("appearance")
 
         val biography1: TextView = view.findViewById(R.id.fragmentText)
         val biography2: TextView = view.findViewById(R.id.fragmentText2)
-        val powerStats1: TextView = view.findViewById(R.id.fragmentText3)
+        val powerStats1: TextView = view.findViewById(R.id.fragmentText4)
+        val appearance1: TextView = view.findViewById(R.id.fragmentText3)
+
         val xxlImage: ImageView = view.findViewById(R.id.fragmentImage)
 
         if (biographyFullName != null) {
@@ -56,6 +60,9 @@ class ListFragment : Fragment() {
             powerStats1.text = "Power: $powerStats"
         }
 
+        if (appearance != null) {
+            appearance1.text = "Race: $appearance"
+        }
 
 
         imageUrl?.let{
