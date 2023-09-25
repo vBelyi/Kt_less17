@@ -35,7 +35,11 @@ class MainActivity: AppCompatActivity() {
                     // Створюємо адаптер та передаємо дані у фрагмент ListFragment
                     val myAdapter = MyRecyclerViewAdapter(items) { selectedItem ->
                         val detailFragment =
-                            ListFragment.newInstance(selectedItem.biography.fullName, selectedItem.biography.firstAppearance, selectedItem.powerstats.power, selectedItem.images.lg)
+                            ListFragment.newInstance(selectedItem.biography.fullName,
+                                                    selectedItem.biography.firstAppearance,
+                                                    selectedItem.powerstats.power,
+                                                    selectedItem.appearance.race,
+                                                    selectedItem.images.lg)
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.myFragment, detailFragment)
                             .addToBackStack(null)
